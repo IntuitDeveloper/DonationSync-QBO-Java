@@ -1,0 +1,68 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title>OAuth2 Sample App - Intuit</title>
+  <link rel="stylesheet" type="text/css" href="../static/css/style.css" th:href="@{css/style.css}"/>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  
+</head>
+<body>
+ <div class="container" >
+  <h3>DonationSync App!</h3>
+  <ul class="nav nav-tabs">
+  	<li><a href="/">Home</a></li>
+    <li><a href="#">Connected</a></li>
+    <li class="active"><a href="/syncCustomer">Sync Customer</a></li>
+    <li><a href="/pledge">Make Pledge </a></li>
+    <li><a href="/donation">Make Donation</a></li>
+  </ul>
+  <div>
+  	<h3>Select a Donor below to make a pledge or donation!</h3>	  
+  </div>
+  
+  <form method="POST" action="#" th:action="@{/save}" th:object="${wrapper}">
+    <table class="table table-striped">
+	    <thead>
+	    <tr>
+	    	<th>Select</th>
+	        <th>Donar Name</th>
+	    </tr>
+	    </thead>
+        <tbody>
+        	<tr th:each="person, stat : ${wrapper.personList}">
+         	<td>
+         		<input type="checkbox" th:name="|personList[${stat.index}].id|" th:value="${person.id}" th:checked="${person.selected}" />
+        		<input type="hidden" th:name="|personList[${stat.index}].name|" th:value="${person.name}" />
+         	</td>						
+			<td th:text="${person.name}"></td>
+			</tr>  
+			         
+         	<tr>
+         	<td th:text="Amount"></td>
+		    <td><label class="col-sm-2 control-label" style="width:20px;">$ </label><input class="form-control" style="width:100px;" type="text" th:name="amt" th:id="amt" th:value="${wrapper.amt}"/></td>
+		    <td></td>
+		    <td></td>
+		    <td></td>
+		    <td></td>
+		    <td></td>
+		    <td></td>
+		 	</tr>
+		 	
+			<tr>
+			  <td>
+			    <button type="submit" class="btn btn-xs btn-primary margin10-right paddingNew" name="action" value="pledge">Make a pledge!</button>
+			  </td>
+			  <td>
+			    <button type="submit" class="btn btn-xs btn-primary margin10-right paddingNew" name="action" value="donation">Make a donation!</button>
+			  </td>
+			</tr>
+		</tbody>
+	</table>
+  </form>
+</div>
+</body>
+</html>

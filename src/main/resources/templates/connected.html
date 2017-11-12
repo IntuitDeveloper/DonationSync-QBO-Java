@@ -1,0 +1,43 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title>OAuth2 Sample App - Intuit</title>
+  <link rel="stylesheet" type="text/css" href="../static/css/style.css" th:href="@{css/style.css}"/>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script>
+    if(window.opener) {
+      window.opener.location.href = '/connected'
+      window.close()
+    }
+    
+  </script>
+</head>
+<body>
+ <div class="container" >
+  <h3>DonationSync App!</h3>
+  <ul class="nav nav-tabs">
+  	<li><a href="/">Home</a></li>
+    <li class="active"><a href="#">Connected</a></li>
+    <li><a href="/syncCustomer">Sync Customer</a></li>
+    <li><a href="/pledge">Make Pledge </a></li>
+     <li><a href="/donation">Make Donation</a></li>
+  </ul>
+ 
+  <h3>Connected!</h3>
+  <p>Your app is now connected to QuickBooks Online company</p>
+  <p> Click on the tabs above to test the API or click the button below.</p>
+  
+  <div>
+
+    <button onclick="location.href='/syncCustomer'">Sync Customer</button>
+    
+    <br /><br />
+   
+    </div>
+</div>
+</body>
+</html>
