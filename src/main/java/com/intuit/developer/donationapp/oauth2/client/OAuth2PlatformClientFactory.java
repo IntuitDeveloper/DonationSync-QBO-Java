@@ -29,7 +29,7 @@ public class OAuth2PlatformClientFactory {
 	public void init() {
 		// intitialize a single thread executor, this will ensure only one thread processes the queue
 		oauth2Config = new OAuth2Config.OAuth2ConfigBuilder(env.getProperty("OAuth2AppClientId"), env.getProperty("OAuth2AppClientSecret")) //set client id, secret
-				.callDiscoveryAPI(Environment.PRODUCTION) // call discovery API to populate urls
+				.callDiscoveryAPI(Environment.SANDBOX) // call discovery API to populate urls, use PRODUCTION for prod environment
 				.buildConfig();
 		client  = new OAuth2PlatformClient(oauth2Config);
 	}

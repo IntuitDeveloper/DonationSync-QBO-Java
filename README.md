@@ -11,7 +11,6 @@ The [Intuit Developer team](https://developer.intuit.com) has written this OAuth
 * [High Level Flow](#high-level-flow)
 * [Scope](#scope)
 * [Storing the Tokens](#storing-the-tokens)
-* [Discovery document](#discovery-document)
 
 
 ## Requirements
