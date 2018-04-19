@@ -1,3 +1,5 @@
+[![Sample Banner](views/Sample.png)][ss1]
+
 # Java Sample App For Tracking Pledges and Donations for NonProfits
 
 The [Intuit Developer team](https://developer.intuit.com) has written this OAuth 2.0 Sample App in Java to provide working examples on how to track pledges and donations for a non-profit organization in QuickBooks.
@@ -61,3 +63,5 @@ It is important to ensure that the scopes your are requesting match the scopes a
 
 ## Storing the tokens
 This app stores all the tokens and user information in the session. For production ready app, tokens should be encrypted and stored in a database.
+
+[ss1]: https://help.developer.intuit.com/s/samplefeedback?cid=9010&repoName=DonationSync-QBO-Java
